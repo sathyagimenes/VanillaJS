@@ -65,7 +65,7 @@ const main = document.getElementsByTagName('main')[0]
 const table = document.createElement('table')
 const thead = document.createElement('thead')
 const tbody = document.createElement('tbody')
-const tfooter = document.createElement('tfooter')
+const tfooter = document.createElement('tfoot')
 
 main.appendChild(table)
 table.appendChild(thead)
@@ -116,9 +116,11 @@ const trFooter = document.createElement('tr')
 tfooter.appendChild(trFooter)
 const tdFooter1 = document.createElement('td')
 tdFooter1.textContent = 'Total de individuos'
+tdFooter1.colSpan = "3";
+tdFooter1.style = "text-align: right"
 trFooter.appendChild(tdFooter1)
 const tdFooter2 = document.createElement('td')
-tdFooter2.textContent = sum
+tdFooter2.textContent = sum;
 trFooter.appendChild(tdFooter2)
 
 
@@ -134,6 +136,9 @@ styleTag.innerHTML = `
 	td {
 		padding: 10px;
 		text-align: center;
+	}
+	tfoot {
+		font-weight: bold;
 	}
 `;
 const headTag = document.querySelector('head');
