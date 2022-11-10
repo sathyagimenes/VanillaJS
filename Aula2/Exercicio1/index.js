@@ -31,17 +31,25 @@ document.getElementsByTagName('span')[0].textContent = xmlText.getElementsByTagN
 //Bermuda Jeans
 document.getElementsByTagName('h1')[1].textContent = xmlText.getElementsByTagName('titulo')[1].textContent
 
-const section = document.querySelector('section[data-item="bermuda-jeans"]')
-const description = document.createElement('p')
-description.textContent = xmlText.getElementsByTagName('descricao')[1].textContent
-divBermuda.appendChild(description)
+const descriptionBermuda = document.createElement('p')
+descriptionBermuda.textContent = xmlText.getElementsByTagName('descricao')[1].textContent
 
-const price = document.createElement('span')
-price.textContent = xmlText.getElementsByTagName('preco')[1].textContent
+const priceBermuda = document.createElement('span')
+priceBermuda.textContent = xmlText.getElementsByTagName('preco')[1].textContent
+
+const divs = document.querySelectorAll('div[data-item]')
+divs[1].appendChild(descriptionBermuda)
+divs[1].appendChild(priceBermuda)
+
 
 //moletom
-const title = document.createElement('h1')
-title.textContent = xmlText.getElementsByTagName('titulo')[2].textContent
-description.textContent = xmlText.getElementsByTagName('descricao')[2].textContent
-price.textContent = xmlText.getElementsByTagName('preco')[2].textContent
+const titleMoletom = document.createElement('h1')
+titleMoletom.textContent = xmlText.getElementsByTagName('titulo')[2].textContent
+const descriptionMoletom = document.createElement('p')
+descriptionMoletom.textContent = xmlText.getElementsByTagName('descricao')[2].textContent
+const priceMoletom = document.createElement('span')
+priceMoletom.textContent = xmlText.getElementsByTagName('preco')[2].textContent
 
+divs[2].appendChild(titleMoletom)
+divs[2].appendChild(descriptionMoletom)
+divs[2].appendChild(priceMoletom)
