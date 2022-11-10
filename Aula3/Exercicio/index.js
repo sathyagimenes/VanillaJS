@@ -1,14 +1,14 @@
 const animais= [
 	{
 		nome: 'lobo-guara',
-		espécie: 'xxxxx',
-		país: 'Brasil',
+		especie: 'xxxxx',
+		pais: 'Brasil',
 		quantidade: 1500,
 	},
 	{
 		nome: 'Foca-monge-do-Havaí',
-		espécie: 'Monachus schauinslandi',
-		país: 'Havaí',
+		especie: 'Monachus schauinslandi',
+		pais: 'Havaí',
 		quantidade: 1000,
 	}
 ]
@@ -40,8 +40,29 @@ const th4 = document.createElement('th')
 th4.textContent = 'Quantidade'
 thead.appendChild(th4)
 
-// for (let i = 0; i <= 10; i++)
-// {
-// 	const td1 = document.createElement('td')
-// 	td1.textContent = animais[0]
-// }
+for (let i = 0; i < animais.length; i++) {
+	const tr1 = document.createElement('tr')
+	tbody.appendChild(tr1)
+	const td1 = document.createElement('td')
+	td1.textContent = animais[i].nome
+	tr1.appendChild(td1)
+	const td2 = document.createElement('td')
+	td2.textContent = animais[i].especie
+	tr1.appendChild(td2)
+	const td3 = document.createElement('td')
+	td3.textContent = animais[i].pais
+	tr1.appendChild(td3)
+	const td4 = document.createElement('td')
+	td4.textContent = animais[i].quantidade
+	tr1.appendChild(td4)
+}
+
+let sum = 0
+for (let i = 0; i < animais.length; i++) {
+	sum += animais[i].quantidade 
+}
+const trFooter = document.createElement('tr')
+tfooter.appendChild(trFooter)
+const tdFooter = document.createElement('td')
+tdFooter.textContent = sum
+trFooter.appendChild(tdFooter)
