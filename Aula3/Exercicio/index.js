@@ -117,7 +117,7 @@ tfooter.appendChild(trFooter)
 const tdFooter1 = document.createElement('td')
 tdFooter1.textContent = 'Total de individuos'
 tdFooter1.colSpan = "3";
-tdFooter1.style = "text-align: right"
+tdFooter1.style.textAlign = "right"
 trFooter.appendChild(tdFooter1)
 const tdFooter2 = document.createElement('td')
 tdFooter2.textContent = sum;
