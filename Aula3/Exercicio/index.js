@@ -72,6 +72,9 @@ table.appendChild(thead)
 table.appendChild(tbody)
 table.appendChild(tfooter)
 
+const trHead = document.createElement('tr')
+thead.appendChild(trHead)
+
 const th1 = document.createElement('th')
 th1.textContent = 'Nome'
 thead.appendChild(th1)
@@ -111,10 +114,12 @@ for (let i = 0; i < animais.length; i++) {
 }
 const trFooter = document.createElement('tr')
 tfooter.appendChild(trFooter)
-const tdFooter = document.createElement('td')
-tdFooter.textContent = sum
-trFooter.appendChild(tdFooter)
-
+const tdFooter1 = document.createElement('td')
+tdFooter1.textContent = 'Total de individuos'
+trFooter.appendChild(tdFooter1)
+const tdFooter2 = document.createElement('td')
+tdFooter2.textContent = sum
+trFooter.appendChild(tdFooter2)
 
 
 //estilização
@@ -131,5 +136,5 @@ styleTag.innerHTML = `
 		text-align: center;
 	}
 `;
-const headTag = document.querySelector("head");
+const headTag = document.querySelector('head');
 headTag.appendChild(styleTag);
