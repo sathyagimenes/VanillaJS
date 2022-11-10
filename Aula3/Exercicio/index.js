@@ -1,16 +1,64 @@
 const animais= [
 	{
-		nome: 'lobo-guara',
-		especie: 'xxxxx',
-		pais: 'Brasil',
-		quantidade: 1500,
+		nome: 'Baleia-azul',
+		especie: 'Balaenoptera musculus',
+		pais: 'Antártica',
+		quantidade: 8500,
 	},
 	{
 		nome: 'Foca-monge-do-Havaí',
 		especie: 'Monachus schauinslandi',
 		pais: 'Havaí',
 		quantidade: 1000,
-	}
+	},
+	{
+		nome: 'Onça-pintada',
+		especie: 'Panthera onca',
+		pais: 'Brasil',
+		quantidade: 10000,
+	},
+	{
+		nome: 'Panda-gigante',
+		especie: 'Ailuropoda melanoleuca',
+		pais: 'China',
+		quantidade: 2500,
+	},
+	{
+		nome: 'Arara-azul-de-lear',
+		especie: 'Anodorhynchus leari',
+		pais: 'Brasil',
+		quantidade: 1200,
+	},
+	{
+		nome: 'Peixe-boi-marinho',
+		especie: 'Trichecus manatus Linnaeus',
+		pais: 'Brasil',
+		quantidade: 500,
+	},
+	{
+		nome: 'Macaco-prego-galego',
+		especie: 'Sapajus flavius',
+		pais: 'Brasil',
+		quantidade: 1000,
+	},
+	{
+		nome: 'Peixe-boi-marinho',
+		especie: 'Trichecus manatus Linnaeus',
+		pais: 'Brasil',
+		quantidade: 500,
+	},
+	{
+		nome: 'Pica-pau-amarelo',
+		especie: 'Celeus flavus subflavus',
+		pais: 'Brasil',
+		quantidade: 250,
+	},
+	{
+		nome: 'Gorila-da-montanha',
+		especie: 'Gorilla beringei beringei',
+		pais: 'Congo, Uganda, Ruanda',
+		quantidade: 1000,
+	},
 ]
 
 const main = document.getElementsByTagName('main')[0]
@@ -66,3 +114,22 @@ tfooter.appendChild(trFooter)
 const tdFooter = document.createElement('td')
 tdFooter.textContent = sum
 trFooter.appendChild(tdFooter)
+
+
+
+//estilização
+const styleTag = document.createElement("style");
+styleTag.innerHTML = `
+	table {
+		background-color: #222222;
+		color: #e7e7e7;
+		margin: 2rem;
+		padding: 10px;
+	}
+	td {
+		padding: 10px;
+		text-align: center;
+	}
+`;
+const headTag = document.querySelector("head");
+headTag.appendChild(styleTag);
