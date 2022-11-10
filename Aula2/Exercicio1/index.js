@@ -21,3 +21,27 @@ const xmlText = parser.parseFromString(
   `,
   `text/xml`
 )
+
+
+//Camiseta Esportiva
+document.getElementsByTagName('h1')[0].textContent = xmlText.getElementsByTagName('titulo')[0].textContent
+document.getElementsByTagName('p')[0].textContent = xmlText.getElementsByTagName('descricao')[0].textContent
+document.getElementsByTagName('span')[0].textContent = xmlText.getElementsByTagName('preco')[0].textContent
+
+//Bermuda Jeans
+document.getElementsByTagName('h1')[1].textContent = xmlText.getElementsByTagName('titulo')[1].textContent
+
+const section = document.querySelector('section[data-item="bermuda-jeans"]')
+const description = document.createElement('p')
+description.textContent = xmlText.getElementsByTagName('descricao')[1].textContent
+divBermuda.appendChild(description)
+
+const price = document.createElement('span')
+price.textContent = xmlText.getElementsByTagName('preco')[1].textContent
+
+//moletom
+const title = document.createElement('h1')
+title.textContent = xmlText.getElementsByTagName('titulo')[2].textContent
+description.textContent = xmlText.getElementsByTagName('descricao')[2].textContent
+price.textContent = xmlText.getElementsByTagName('preco')[2].textContent
+
