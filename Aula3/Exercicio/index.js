@@ -112,6 +112,7 @@ let sum = 0
 for (let i = 0; i < animais.length; i++) {
 	sum += animais[i].quantidade 
 }
+
 const trFooter = document.createElement('tr')
 tfooter.appendChild(trFooter)
 const tdFooter1 = document.createElement('td')
@@ -122,7 +123,6 @@ trFooter.appendChild(tdFooter1)
 const tdFooter2 = document.createElement('td')
 tdFooter2.textContent = sum;
 trFooter.appendChild(tdFooter2)
-
 
 //estilização
 const styleTag = document.createElement("style");

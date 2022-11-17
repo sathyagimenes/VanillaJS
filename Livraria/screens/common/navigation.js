@@ -1,0 +1,14 @@
+const header = document.createElement('header');
+const topnav = document.createElement('div');
+topnav.classList.add('topnav');
+const home = document.createElement('a');
+home.href = "../index.html";
+home.textContent = "Home";
+const registration = document.createElement('a');
+registration.href = "./register.html";
+registration.textContent = "Register";
+const edit = document.createElement('a');
+edit.href = "./edit.html";
+edit.textContent = "Edit";
+document.body.append(header, topnav);
+topnav.append(home, registration, edit);
