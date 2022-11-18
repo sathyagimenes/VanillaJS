@@ -1,8 +1,7 @@
 (() => {
-	for (const file of ['common/navigation.js', 'common/field.js']) {
+	for (const file of ['common/navigation.js', 'common/field.js', 'common/api.js']) {
 	  const script = document.createElement("script");
 	  script.setAttribute("src", `./${file}`);
-  
 	  document.head.appendChild(script);
 	}
 
@@ -51,6 +50,7 @@
 	
 		function register (inTitle, inAuthor, inDescription, inQuantity) {
 			const newObj = { title: inTitle, author: inAuthor, description: inDescription, quantity: inQuantity};
+			PostBook (newObj);
 			books.push(newObj);//adicionar via api
 			checkResgiter();//excluir depois
 			window.alert('Categoria adicionada com sucesso!');
