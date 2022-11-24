@@ -26,23 +26,28 @@ window.Page.register = async () => {
   const form = field.form([
     field.create({
       label: "Titulo",
+      className: "titulo"
     }),
     field.create({
       label: "Autor",
+      className: "autor"
     }),
     field.create({
       label: "Descrição",
-      type: "textarea",
+      className: "descricao",
+      inputType: "textarea",
     }),
     field.create({
       label: "Tiragem",
-      type: "number",
+      className: "tiragem",
+      inputType: "number",
     }),
     divBtn,
   ]);
   container.append(title, form);
 
   async function Register(inTitle, inAuthor, inDescription, inQuantity) {
+    debugger
     const newObj = {
       title: inTitle,
       author: inAuthor,
@@ -61,10 +66,11 @@ window.Page.register = async () => {
   btnInsert.addEventListener("click", InsertNewBook);
 
   async function InsertNewBook() {
-    const titulo = form.querySelector("[name='titulo']");
-    const autor = form.querySelector("[name='autor']");
-    const descricao = form.querySelector("[name='descricao']");
-    const tiragem = form.querySelector("[name='tiragem']");
+    debugger
+    const titulo = form.querySelector("[class='titulo']");
+    const autor = form.querySelector("[class='autor']");
+    const descricao = form.querySelector("[class='descricao']");
+    const tiragem = form.querySelector("[class='tiragem']");
     // const sameTitle = FilterByName(listOfBooks, titulo.value);
     if (titulo.value.length <= 2) {
       window.alert("O titulo deve ter, pelo menos, três letras");
@@ -77,7 +83,6 @@ window.Page.register = async () => {
       // } else if (sameTitle.length > 0) {
       //   window.alert(`O título ${sameTitle.value} já existe`);
     } else {
-      debugger;
       Register(titulo.value, autor.value, descricao.value, tiragem.value);
     }
     Page.register();

@@ -31,6 +31,7 @@ function CreateTable(row, tableHead) {
     const tr = document.createElement("tr");
     for (let j = 1; j < tableHead.length + 1; j++) {
       const td = document.createElement("td");
+      td.setAttribute("class", `field${j}`);
       const texto = document.createTextNode(Object.values(row[i])[j]);
       td.appendChild(texto);
       tr.appendChild(td);
@@ -38,8 +39,7 @@ function CreateTable(row, tableHead) {
     tbody.appendChild(tr);
   }
 
-  table.appendChild(thead);
-  table.appendChild(tbody);
+  table.append(thead, tbody);
 
   return table;
 }
@@ -55,7 +55,7 @@ function FilterByName(items, name) {
 
 function CallCSS(reference) {
   const link = document.createElement("link");
-  const attributes = { rel: "stylesheet", type: "text/css", href: reference};
+  const attributes = { rel: "stylesheet", type: "text/css", href: reference };
   for (const key in attributes) {
     link.setAttribute(key, attributes[key]);
   }

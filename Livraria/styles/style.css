@@ -5,6 +5,23 @@ main {
 	flex-direction: column;
 }
 
+.field1 {
+	width: 200px;
+}
+
+.field2 {
+	width: 200px;
+}
+
+.field3 {
+	width: 400px;
+	;
+}
+
+.field4 {
+	width: 100px;
+}
+
 /* html {
 }
 
