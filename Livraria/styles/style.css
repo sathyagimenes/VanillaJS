@@ -5,20 +5,20 @@ main {
 	flex-direction: column;
 }
 
-.field1 {
+.titulo {
 	width: 200px;
 }
 
-.field2 {
+.autor {
 	width: 200px;
 }
 
-.field3 {
+.descricao {
 	width: 400px;
 	;
 }
 
-.field4 {
+.tiragem {
 	width: 100px;
 }
 

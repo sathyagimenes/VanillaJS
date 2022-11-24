@@ -31,7 +31,7 @@ function CreateTable(row, tableHead) {
     const tr = document.createElement("tr");
     for (let j = 1; j < tableHead.length + 1; j++) {
       const td = document.createElement("td");
-      td.setAttribute("class", `field${j}`);
+      td.setAttribute("class", Object.keys(row[i])[j]);
       const texto = document.createTextNode(Object.values(row[i])[j]);
       td.appendChild(texto);
       tr.appendChild(td);
