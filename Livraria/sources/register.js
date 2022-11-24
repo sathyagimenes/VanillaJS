@@ -47,7 +47,6 @@ window.Page.register = async () => {
   container.append(title, form);
 
   async function Register(inTitle, inAuthor, inDescription, inQuantity) {
-    debugger
     const newObj = {
       title: inTitle,
       author: inAuthor,
@@ -66,7 +65,6 @@ window.Page.register = async () => {
   btnInsert.addEventListener("click", InsertNewBook);
 
   async function InsertNewBook() {
-    debugger
     const titulo = form.querySelector("[class='titulo']");
     const autor = form.querySelector("[class='autor']");
     const descricao = form.querySelector("[class='descricao']");

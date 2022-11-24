@@ -9,6 +9,7 @@
     "common/utils.js",
     "common/field.js",
     "common/api.js",
+    "common/services.js",
     "common/navigation.js",
   ]) {
     const script = document.createElement("script");

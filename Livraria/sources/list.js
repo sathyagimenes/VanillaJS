@@ -23,13 +23,19 @@ window.Page.list = async () => {
   const tableContainer = CreateElementWithAttribute(
     "div",
     "class",
-    "table-container"
+    "tableContainer"
   );
   main.appendChild(tableContainer);
 
   const tableHeaderData = ["Título", "Autor", "Descrição", "Tiragem"];
+  debugger;
 
-  const books = await GetBook();
+  // const books = await GetBook();
+  const books = await api.connection({
+    method: "POST",
+    service: "livro/lista",
+    body: api.getBookBody(),
+  });
   const tableContent = [];
   books.sort((a, b) => a.titulo - b.titulo);
 
