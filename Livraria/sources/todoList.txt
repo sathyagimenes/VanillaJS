@@ -1,0 +1,2 @@
+usar async e await e await em tudo
+ou usar o promise
