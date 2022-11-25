@@ -1,0 +1,53 @@
+.containerRegister {
+	position: relative;
+	min-height: 100vh;
+	display: flex; 
+	flex-direction: column; 
+	align-items: center; 
+	justify-content: flex-start;
+	background-color: var(--color-2);
+	width: 100vw;
+	padding: 30px;
+}
+
+.containerRegister form {
+	padding: 30px;
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.containerRegister input {
+	width: 250px;
+    height: 30px;
+	font-size: 22px;
+	padding: 3px;
+	border-radius: 8px;
+	border: 0px;
+	margin: 4px;
+}
+
+.containerRegister textarea {
+	width: 250px;
+	font-size: 22px;
+	padding: 3px;
+	border-radius: 8px;
+	border: 0px;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	border: 0px;
+	padding: 10px;
+}
+
+.containerRegister button {
+	padding: 10px;
+	margin: 30px;
+	font-size: 19px;
+	border-radius: 10px;
+	background-color: var(--color-4);
+	color: var(--color-1);
+}

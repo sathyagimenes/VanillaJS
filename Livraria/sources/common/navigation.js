@@ -29,12 +29,6 @@ window.Page.navigation = {
           Page.register();
         },
       },
-      {
-        text: "Editar/Remover",
-        onClick: () => {
-          Page.edit();
-        },
-      },
     ];
 
     navLinks.forEach((page) => {

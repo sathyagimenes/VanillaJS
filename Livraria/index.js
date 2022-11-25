@@ -2,15 +2,13 @@
   window.Page = {};
 
   for (const file of [
-    "edit.js",
     "editions.js",
     "list.js",
     "register.js",
     "home.js",
     "common/utils.js",
     "common/field.js",
-    "common/api.js",
-    "common/services.js",
+    "common/apiService.js",
     "common/navigation.js",
   ]) {
     const script = document.createElement("script");
@@ -27,5 +25,7 @@
     window.Page.home();
     window.Page.navigation.addFooter();
     CallCSS("./styles/style.css");
+    CallCSS("./styles/list.css");
+    CallCSS("./styles/register.css");
   });
 })();

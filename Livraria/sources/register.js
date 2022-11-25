@@ -5,7 +5,7 @@ window.Page.register = async () => {
   const container = CreateElementWithAttribute(
     "div",
     "class",
-    "containerCategory"
+    "containerRegister"
   );
   main.appendChild(container);
 

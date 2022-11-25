@@ -36,7 +36,7 @@ function CreateTable(row, tableHead) {
       td.appendChild(texto);
       tr.appendChild(td);
       if (j == tableHead.length) {
-        const buttonsTd = document.createElement("td");
+        const buttonsTd = CreateElementWithAttribute("td", "class", "buttonDiv");
         const buttonEdit = document.createElement("button");
         const iconEdit = document.createElement("img");
         iconEdit.setAttribute("src", "./assets/edit_icon.svg");

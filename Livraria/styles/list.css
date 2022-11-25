@@ -1,0 +1,115 @@
+  .pageContainer{
+	position: relative;
+	min-height: 80vh;
+	display: flex; 
+	flex-direction: column; 
+	align-items: center; 
+	justify-content: flex-start;
+	background-color: var(--color-2);
+	width: 100vw;
+  }
+
+  .searchContainer {
+	padding: 30px;
+  }
+  .searchContainer input {
+	width: 250px;
+    height: 30px;
+	font-size: 22px;
+	padding: 3px;
+	border-radius: 8px;
+  }
+
+  .searchContainer button {
+	border-radius: 10px;
+	background-color: var(--color-4);
+	color: var(--color-1);
+	margin: 10px;
+	padding: 5px;
+	font-size: 19px;
+  }
+
+  table table, td {
+	border: 1px solid;
+	padding: 3px;
+  }
+
+tr button {    
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+	margin: 8px;
+}
+
+tr button img {
+    width: 30px;
+    height: 30px;
+}
+
+.modal{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(169, 168, 168, 0.344);
+	width: 100vw;
+	height: 100%;
+	overflow-y: hidden;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .modalDataContainer{
+	width: 400px;
+	background-color: var(--color-3);
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: space-around;
+	padding: 20px;
+	border-radius: 20px;
+
+  }
+  
+  .modalInputContainer{
+	width: 350px;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  
+  .modalInputContainer label {
+	color: var(--color-5);
+	font-size: 19px;
+  }
+  
+  .modalInputContainer input {
+	width: 250px;
+	height: 30px;
+	font-size: 17px;
+	padding: 3px;
+  }
+
+  .modalInputContainer textarea {
+	width: 250px;
+	font-size: 17px;
+	padding: 3px;
+  }
+  
+  .modalBtnContainer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
+  }
+
+  .modalBtnContainer button {
+	border-radius: 10px;
+	background-color: var(--color-4);
+	color: var(--color-1);
+	margin: 10px;
+	padding: 5px;
+	font-size: 19px;
+  }
