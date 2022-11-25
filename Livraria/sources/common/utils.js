@@ -35,6 +35,24 @@ function CreateTable(row, tableHead) {
       const texto = document.createTextNode(Object.values(row[i])[j]);
       td.appendChild(texto);
       tr.appendChild(td);
+      if (j == tableHead.length) {
+        const buttonsTd = document.createElement("td");
+        const buttonEdit = document.createElement("button");
+        const iconEdit = document.createElement("img");
+        iconEdit.setAttribute("src", "./assets/edit_icon.svg");
+        buttonEdit.setAttribute("class", Object.values(row[i])[0]);
+        buttonEdit.appendChild(iconEdit);
+        buttonEdit.setAttribute("onclick", "editions.edit(this.className)");
+        buttonsTd.appendChild(buttonEdit);
+        const buttonDelete = document.createElement("button");
+        const iconDelete = document.createElement("img");
+        iconDelete.setAttribute("src", "./assets/delete_icon.svg");
+        buttonDelete.setAttribute("class", Object.values(row[i])[0]);
+        buttonDelete.setAttribute("onclick", "editions.delete(this.className)");
+        buttonDelete.appendChild(iconDelete);
+        buttonsTd.appendChild(buttonDelete);
+        tr.appendChild(buttonsTd);
+      }
     }
     tbody.appendChild(tr);
   }
@@ -60,4 +78,19 @@ function CallCSS(reference) {
     link.setAttribute(key, attributes[key]);
   }
   document.head.appendChild(link);
+}
+
+window.utils = {
+  filterByUid: async (items, uid) => {
+    let filteredItems = items;
+    filteredItems = filteredItems.filter(item => item.uid.toLocaleLowerCase().includes(uid.toLocaleLowerCase()));
+  
+    return filteredItems;
+  },
+  createButton: (btnText, className = '') => {
+      const newButton = document.createElement('button');
+      newButton.textContent = btnText;
+      newButton.setAttribute('class', className);
+      return newButton;
+  }
 }

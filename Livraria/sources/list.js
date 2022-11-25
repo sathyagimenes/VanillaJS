@@ -1,7 +1,14 @@
 window.Page.list = async () => {
   main.innerHTML = "";
 
-  const containerBusca = CreateElementWithAttribute(
+  const pageContainer = CreateElementWithAttribute(
+    "div",
+    "class",
+    "pageContainer"
+  );
+  main.appendChild(pageContainer);
+
+  const searchContainer = CreateElementWithAttribute(
     "div",
     "class",
     "searchContainer"
@@ -15,20 +22,19 @@ window.Page.list = async () => {
   const addButton = document.createElement("button");
   addButton.innerText = "Pesquisar";
 
-  containerBusca.appendChild(searchInput);
-  containerBusca.appendChild(addButton);
+  searchContainer.appendChild(searchInput);
+  searchContainer.appendChild(addButton);
 
-  main.appendChild(containerBusca);
+  pageContainer.appendChild(searchContainer);
 
   const tableContainer = CreateElementWithAttribute(
     "div",
     "class",
     "tableContainer"
   );
-  main.appendChild(tableContainer);
+  pageContainer.appendChild(tableContainer);
 
   const tableHeaderData = ["Título", "Autor", "Descrição", "Tiragem"];
-  debugger;
 
   // const books = await GetBook();
   const books = await api.connection({
@@ -51,4 +57,9 @@ window.Page.list = async () => {
 
   const table = CreateTable(tableContent, tableHeaderData);
   tableContainer.appendChild(table);
+
+  const modal = document.createElement('div');
+  modal.setAttribute('class', 'modal');
+  modal.setAttribute('style', 'display: none;');
+  pageContainer.appendChild(modal);
 };

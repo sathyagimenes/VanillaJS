@@ -3,6 +3,7 @@
 
   for (const file of [
     "edit.js",
+    "editions.js",
     "list.js",
     "register.js",
     "home.js",

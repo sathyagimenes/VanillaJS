@@ -26,11 +26,11 @@ window.Page.register = async () => {
   const form = field.form([
     field.create({
       label: "Titulo",
-      className: "titulo"
+      className: "titulo",
     }),
     field.create({
       label: "Autor",
-      className: "autor"
+      className: "autor",
     }),
     field.create({
       label: "Descrição",
@@ -47,17 +47,20 @@ window.Page.register = async () => {
   container.append(title, form);
 
   async function Register(inTitle, inAuthor, inDescription, inQuantity) {
-    const newObj = {
+    const body = api.postBookBody({
       title: inTitle,
       author: inAuthor,
       description: inDescription,
       quantity: parseInt(inQuantity),
-    };
-    const response = await PostBook(newObj);
-    if (response === "ok") {
+    });
+    debugger
+    const response = await api.connection({
+      method: "POST",
+      service: "livro",
+      body,
+    });
+    if(response){
       window.alert("Livro adicionado com sucesso!");
-    } else {
-      window.alert("Falha na comunicação com a api");
     }
   }
 

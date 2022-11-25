@@ -9,9 +9,6 @@ window.Page.navigation = {
     iconHeader.addEventListener("click", () => {
       Page.home();
     });
-    // const iconClose = document.createElement('img');
-    // iconClose.setAttribute('src', './src/assets/imgs/x_icon.svg');
-    // iconClose.addEventListener('click', () => {Page.home.hideMenu()});
     nav.appendChild(iconHeader);
     const navLinks = [
       {
@@ -66,12 +63,4 @@ window.Page.navigation = {
     footer.appendChild(nav);
     document.body.appendChild(footer);
   },
-  //   hideMenu: () => {
-  //     const navElements = document.getElementById("headerNav");
-  //     navElements.style.right = "-200px";
-  //   },
-  //   showMenu: () => {
-  //     const navElements = document.getElementById("headerNav");
-  //     navElements.style.right = "0";
-  //   },
 };
