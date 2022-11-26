@@ -36,7 +36,6 @@ window.Page.list = async () => {
 
   const tableHeaderData = ["Título", "Autor", "Descrição", "Tiragem"];
 
-  // const books = await GetBook();
   const books = await api.connection({
     method: "POST",
     service: "livro/lista",
@@ -58,8 +57,8 @@ window.Page.list = async () => {
   const table = CreateTable(tableContent, tableHeaderData);
   tableContainer.appendChild(table);
 
-  const modal = document.createElement('div');
-  modal.setAttribute('class', 'modal');
-  modal.setAttribute('style', 'display: none;');
+  const modal = document.createElement("div");
+  modal.setAttribute("class", "modal");
+  modal.setAttribute("style", "display: none;");
   pageContainer.appendChild(modal);
 };

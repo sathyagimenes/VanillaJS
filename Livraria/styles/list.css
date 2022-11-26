@@ -29,9 +29,10 @@
 	font-size: 19px;
   }
 
-  table table, td {
+  table, td {
 	border: 1px solid;
-	padding: 3px;
+	padding: 5px;
+	margin: 50px;
   }
 
 tr button {    

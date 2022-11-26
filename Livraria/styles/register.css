@@ -1,9 +1,9 @@
 .containerRegister {
 	position: relative;
 	min-height: 100vh;
-	display: flex; 
-	flex-direction: column; 
-	align-items: center; 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	justify-content: flex-start;
 	background-color: var(--color-2);
 	width: 100vw;
@@ -20,9 +20,9 @@
 
 .containerRegister input {
 	width: 250px;
-    height: 30px;
+	height: 30px;
 	font-size: 22px;
-	padding: 3px;
+	padding: 5px;
 	border-radius: 8px;
 	border: 0px;
 	margin: 4px;
@@ -31,7 +31,7 @@
 .containerRegister textarea {
 	width: 250px;
 	font-size: 22px;
-	padding: 3px;
+	padding: 5px;
 	border-radius: 8px;
 	border: 0px;
 }

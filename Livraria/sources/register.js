@@ -46,7 +46,7 @@ window.Page.register = async () => {
   ]);
   container.append(title, form);
 
-  async function Register(inTitle, inAuthor, inDescription, inQuantity) {
+  async function register(inTitle, inAuthor, inDescription, inQuantity) {
     const body = api.postBookBody({
       title: inTitle,
       author: inAuthor,
@@ -84,7 +84,7 @@ window.Page.register = async () => {
       // } else if (sameTitle.length > 0) {
       //   window.alert(`O título ${sameTitle.value} já existe`);
     } else {
-      Register(titulo.value, autor.value, descricao.value, tiragem.value);
+      register(titulo.value, autor.value, descricao.value, tiragem.value);
     }
     Page.register();
   }

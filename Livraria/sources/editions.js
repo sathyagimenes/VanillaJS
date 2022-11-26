@@ -76,9 +76,6 @@ window.editions = {
         body,
       });
       modal.setAttribute("style", "display: none");
-      if (response) {
-        window.alert("Livro editado com sucesso!");
-      }
       Page.list();
     });
 
