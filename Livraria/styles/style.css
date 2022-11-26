@@ -23,6 +23,8 @@ main {
 
 body {
 	height: fit-content;
+	min-width: 650px;
+	background-color: var(--color-2);
 }
 
 main {
@@ -61,6 +63,7 @@ main {
 	justify-content: space-around;
 	align-items: center;
 	padding: 10px;
+	min-width: 500px;
 }
 
 .headerNav ul {
@@ -89,12 +92,14 @@ main {
 }
 
 .homeContainer h1 {
-	background-color: var(--color-2);
+	background-color: var(--color-3);
 	text-align: center;
 	justify-content: center;
 	display: flex;
 	align-items: center;
 	padding: 10px;
-	color: var(--color-5);
+	color: var(--color-1);
 	height: 120px;
+	align-self: center;
+	box-shadow: 0px 5px 30px 30px var(--color-4);
 }

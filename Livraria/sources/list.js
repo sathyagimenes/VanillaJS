@@ -8,25 +8,37 @@ window.Page.list = async () => {
   );
   main.appendChild(pageContainer);
 
+  const titleContainer = utils.createElementWithAttribute(
+    "div",
+    "class",
+    "titleListContainer"
+  );
+
+  const title = utils.createElementWithText({type: "h1", text: "Acervo"});
+  titleContainer.appendChild(title);
   const searchContainer = utils.createElementWithAttribute(
     "div",
     "class",
     "searchContainer"
   );
 
+  const searchLabel = utils.createElementWithText({
+    type: "label",
+    text: "Título do livro: ",
+  });
+
   const searchInput = utils.createElementWithAttribute(
     "input",
     "placeholder",
-    "buscar por título..."
+    "buscar por livro..."
   );
   searchInput.setAttribute("class", "searchInput");
   const addButton = document.createElement("button");
   addButton.innerText = "Pesquisar";
   addButton.addEventListener("click", searchBooks);
 
-  searchContainer.appendChild(searchInput);
-  searchContainer.appendChild(addButton);
-  pageContainer.appendChild(searchContainer);
+  searchContainer.append(searchLabel, searchInput, addButton);
+  pageContainer.append(titleContainer, searchContainer);
 
   async function searchBooks() {
     const bookSearch = document.getElementsByClassName("searchInput")[0];

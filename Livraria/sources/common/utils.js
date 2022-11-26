@@ -25,7 +25,7 @@ window.utils = {
     const tbody = document.createElement("tbody");
 
     tableHead.forEach((item) => {
-      const th = document.createElement("th");
+      const th = utils.createElementWithAttribute("th", "class", item.toLocaleLowerCase());
       th.innerText = item;
       thead.appendChild(th);
     });
