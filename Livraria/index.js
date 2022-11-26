@@ -17,9 +17,7 @@
   }
 
   window.addEventListener("load", () => {
-
     window.Page.navigation.addHeader();
-
     window.main = document.createElement("main");
     document.body.appendChild(main);
     window.Page.home();

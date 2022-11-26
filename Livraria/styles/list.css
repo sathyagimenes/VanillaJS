@@ -1,171 +1,177 @@
-  .pageContainer{
-	position: relative;
-	min-height: 80vh;
-	display: flex; 
-	flex-direction: column; 
-	align-items: center; 
-	justify-content: flex-start;
-	background-color: var(--color-2);
-	width: 100vw;
-	min-width: 650px;
+  .pageContainer {
+  	position: relative;
+  	min-height: 80vh;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+  	background-color: var(--color-2);
+  	width: 100vw;
+  	min-width: 650px;
   }
 
-  .titleListContainer{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 40px;
+  .titleListContainer {
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	margin: 40px;
   }
+
   .titleListContainer h1 {
-	text-align: center;
-	color: var(--color-1);
-	padding: 3px;
-	width: 200px;
-	background-color: var(--color-3);
+  	text-align: center;
+  	color: var(--color-1);
+  	padding: 3px;
+  	width: 200px;
+  	background-color: var(--color-3);
   }
 
   .searchContainer {
-	padding: 10px;
+  	padding: 10px;
   }
 
   .searchContainer label {
-	width: 290px;
-    height: 45px;
-	font-size: 27px;
-	padding: 3px;
-	border-radius: 8px;
-	text-align: center;
+  	width: 290px;
+  	height: 45px;
+  	font-size: 27px;
+  	padding: 3px;
+  	border-radius: 8px;
+  	text-align: center;
   }
 
   .searchContainer input {
-	width: 290px;
-    height: 45px;
-	font-size: 22px;
-	padding: 3px;
-	border-radius: 8px;
+  	width: 290px;
+  	height: 45px;
+  	font-size: 22px;
+  	padding: 3px;
+  	border-radius: 8px;
   }
 
   .searchContainer button {
-	height: 45px;
-	border-radius: 10px;
-	background-color: var(--color-4);
-	color: var(--color-1);
-	margin: 10px;
-	padding: 10px;
-	font-size: 19px;
+  	height: 45px;
+  	border-radius: 10px;
+  	background-color: var(--color-4);
+  	color: var(--color-1);
+  	margin: 10px;
+  	padding: 10px;
+  	font-size: 19px;
   }
 
   .tableContainer {
-	margin: 10px
+  	margin: 10px
   }
 
-  table, td {
-	border: 1px solid;
-	padding: 5px;
-	margin: 50px;
+  table,
+  td {
+  	border: 1px solid;
+  	padding: 5px;
+  	margin: 50px;
   }
 
-tr button {    
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-	margin: 8px;
-}
+  tr button {
+  	width: 30px;
+  	height: 30px;
+  	background-color: transparent;
+  	border: none;
+  	cursor: pointer;
+  	margin: 8px;
+  }
 
-tr button img {
-    width: 30px;
-    height: 30px;
-}
+  tr button img {
+  	width: 30px;
+  	height: 30px;
+  }
 
-.modal{
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	width: 100vw;
-	height: 100%;
-	overflow-y: hidden;
-	justify-content: center;
-	align-items: center;
-	border-color: var(--color-5);
-	border: 3px;
+  .modal {
+  	position: absolute;
+  	display: flex;
+  	flex-direction: column;
+  	width: 100vw;
+  	height: 100%;
+  	overflow-y: hidden;
+  	justify-content: center;
+  	align-items: center;
+  	border-color: var(--color-5);
+  	border: 3px;
   }
-  
-  .modalDataContainer{
-	width: 450px;
-	background-color: var(--color-3);
-	height: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: space-around;
-	padding: 20px;
-	border-radius: 20px;
-	box-shadow: 0px 5px 30px 30px var(--color-4);
+
+  .modalDataContainer {
+  	width: 450px;
+  	background-color: var(--color-3);
+  	height: auto;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: space-around;
+  	padding: 20px;
+  	border-radius: 20px;
+  	box-shadow: 0px 5px 30px 30px var(--color-4);
   }
-  
-  .modalInputContainer{
-	width: 350px;
-	margin: 10px 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+
+  .modalInputContainer {
+  	width: 350px;
+  	margin: 10px 0;
+  	display: flex;
+  	align-items: center;
+  	justify-content: space-between;
   }
-  
+
   .modalInputContainer label {
-	color: var(--color-5);
-	font-size: 21px;
+  	color: var(--color-5);
+  	font-size: 21px;
   }
-  
+
   .modalInputContainer input {
-	width: 250px;
-	height: 30px;
-	font-size: 17px;
-	padding: 3px;
-	margin: 3px;
+  	width: 250px;
+  	height: 30px;
+  	font-size: 17px;
+  	padding: 3px;
+  	margin: 3px;
   }
 
   .modalInputContainer textarea {
-	width: 250px;
-	font-size: 17px;
-	padding: 3px;
+  	width: 250px;
+  	font-size: 17px;
+  	padding: 3px;
   }
-  
-  .modalBtnContainer{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 20px;
+
+  .modalBtnContainer {
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	margin: 20px;
   }
 
   .modalBtnContainer button {
-	border-radius: 10px;
-	background-color: var(--color-4);
-	color: var(--color-1);
-	margin: 10px;
-	padding: 10px;
-	font-size: 19px;
+  	border-radius: 10px;
+  	background-color: var(--color-4);
+  	color: var(--color-1);
+  	margin: 10px;
+  	padding: 10px;
+  	font-size: 19px;
   }
 
   @media screen and (max-width: 750px) {
-	.tableContainer .descricao {
-		display:none;
-	}
-	.tableContainer .descrição {
-		display:none;
-	}
-	.searchContainer {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.searchContainer input, button {
-		width: 250px;
-	}
-}
+  	.tableContainer .descricao {
+  		display: none;
+  	}
 
-@media screen and (max-width: 600px) {
-	.tableContainer .tiragem {
-		display:none;
-	}
-}
+  	.tableContainer .descrição {
+  		display: none;
+  	}
+
+  	.searchContainer {
+  		display: flex;
+  		flex-direction: column;
+  		align-items: center;
+  	}
+
+  	.searchContainer input,
+  	button {
+  		width: 250px;
+  	}
+  }
+
+  @media screen and (max-width: 600px) {
+  	.tableContainer .tiragem {
+  		display: none;
+  	}
+  }
