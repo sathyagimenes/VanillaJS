@@ -107,9 +107,55 @@ window.utils = {
     const storagedData = JSON.parse(localStorage.getItem("searchedBook"));
     if (storagedData) {
       firstSearch.textContent = storagedData.slice(-1);
+      firstSearch.addEventListener("click", utilsSearch.firstItem);
       secondSearch.textContent = storagedData.slice(-2, -1);
+      secondSearch.addEventListener("click", utilsSearch.secondItem);
       thirdSearch.textContent = storagedData.slice(-3, -2);
+      thirdSearch.addEventListener("click", utilsSearch.thirdItem);
     }
+  },
+  searchBooks: async () => {
+    const bookSearch = document.getElementsByClassName("searchInput")[0];
+    const pageContainer = document.querySelector(".pageContainer");
+
+    const body = api.getBookBody(bookSearch.value);
+    const filteredBooks = await api.connection({
+      method: "POST",
+      service: "livro/lista",
+      body,
+    });
+    filteredBooks.sort((a, b) => a.titulo - b.titulo);
+
+    const filteredContent = [];
+    filteredBooks.forEach((element) => {
+      filteredContent.push({
+        uid: element.uid,
+        titulo: element.titulo,
+        autor: element.autor,
+        descricao: element.descricao,
+        tiragem: element.tiragem,
+      });
+    });
+    const clearTable = document.querySelector(".tableContainer");
+    clearTable.remove();
+    const tableHeaderData = ["Título", "Autor", "Descrição", "Tiragem"];
+    const filteredTable = utils.createTable(filteredContent, tableHeaderData);
+    pageContainer.appendChild(filteredTable);
+
+    const storageBooks = JSON.parse(
+      localStorage.getItem("searchedBook") || "[]"
+    );
+    storageBooks.push(bookSearch.value);
+    bookSearch.value = "";
+
+    if (storageBooks.length > 3) {
+      storageBooks.shift();
+    }
+    localStorage.setItem("searchedBook", JSON.stringify(storageBooks));
+
+    utils.createSearch();
+    const clearsearches = document.querySelector(".previousSearch");
+    clearsearches.remove();
   },
   createElementWithText: ({
     type,

@@ -7,6 +7,7 @@
     "register.js",
     "home.js",
     "common/utils.js",
+    "common/utilsSearch.js",
     "common/field.js",
     "common/apiService.js",
     "common/navigation.js",

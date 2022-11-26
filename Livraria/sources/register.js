@@ -52,7 +52,6 @@ window.Page.register = async () => {
       description: inDescription,
       quantity: parseInt(inQuantity),
     });
-    debugger;
     const response = await api.connection({
       method: "POST",
       service: "livro",
