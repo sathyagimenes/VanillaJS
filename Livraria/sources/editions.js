@@ -8,7 +8,7 @@ window.editions = {
     const chosenBook = await utils.filterByUid(bookList, bookId);
     const modal = document.querySelector(".modal");
 
-    const modalDataContainer = CreateElementWithAttribute(
+    const modalDataContainer = utils.createElementWithAttribute(
       "div",
       "class",
       "modalDataContainer"
@@ -49,7 +49,7 @@ window.editions = {
       document.getElementsByName("modal-uid")[0].readOnly = true;
     }, 500);
 
-    const containerButtonsModal = CreateElementWithAttribute(
+    const containerButtonsModal = utils.createElementWithAttribute(
       "div",
       "class",
       "modalBtnContainer"

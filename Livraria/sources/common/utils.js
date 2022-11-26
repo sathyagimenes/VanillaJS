@@ -1,70 +1,35 @@
-function CreateElementWithText({
-  type,
-  text = "",
-  attrType = "",
-  attrName = "",
-}) {
-  const element = document.createElement(type);
-  element.textContent = text;
-  if (!attrType === "") element.setAttribute(attrType, attrName);
-  return element;
-}
-
-function CreateElementWithAttribute(elName, attrType, attrName) {
-  const newElement = document.createElement(elName);
-  newElement.setAttribute(attrType, attrName);
-  return newElement;
-}
-
-function FilterByName(items, name) {
-  let filteredItems = items;
-  filteredItems = filteredItems.filter((item) =>
-    item.titulo.toLocaleLowerCase().includes(name.toLocaleLowerCase())
-  );
-
-  return filteredItems;
-}
-
-function CallCSS(reference) {
-  const link = document.createElement("link");
-  const attributes = { rel: "stylesheet", type: "text/css", href: reference };
-  for (const key in attributes) {
-    link.setAttribute(key, attributes[key]);
-  }
-  document.head.appendChild(link);
-}
-
 window.utils = {
   filterByUid: async (items, uid) => {
     let filteredItems = items;
-    filteredItems = filteredItems.filter(item => item.uid.toLocaleLowerCase().includes(uid.toLocaleLowerCase()));
-  
+    filteredItems = filteredItems.filter((item) =>
+      item.uid.toLocaleLowerCase().includes(uid.toLocaleLowerCase())
+    );
+
     return filteredItems;
   },
-  createButton: (btnText, className = '') => {
-      const newButton = document.createElement('button');
-      newButton.textContent = btnText;
-      newButton.setAttribute('class', className);
-      return newButton;
+  createButton: (btnText, className = "") => {
+    const newButton = document.createElement("button");
+    newButton.textContent = btnText;
+    newButton.setAttribute("class", className);
+    return newButton;
   },
   createTable: (row, tableHead) => {
-
-    const tableContainer = CreateElementWithAttribute(
+    const tableContainer = utils.createElementWithAttribute(
       "div",
       "class",
       "tableContainer"
     );
 
-    const table = CreateElementWithAttribute("table", "class", "booksTable");
+    const table = utils.createElementWithAttribute("table", "class", "booksTable");
     const thead = document.createElement("thead");
     const tbody = document.createElement("tbody");
-  
+
     tableHead.forEach((item) => {
       const th = document.createElement("th");
       th.innerText = item;
       thead.appendChild(th);
     });
-  
+
     for (let i = 0; i < row.length; i++) {
       const tr = document.createElement("tr");
       for (let j = 1; j < tableHead.length + 1; j++) {
@@ -74,7 +39,11 @@ window.utils = {
         td.appendChild(texto);
         tr.appendChild(td);
         if (j == tableHead.length) {
-          const buttonsTd = CreateElementWithAttribute("td", "class", "buttonDiv");
+          const buttonsTd = utils.createElementWithAttribute(
+            "td",
+            "class",
+            "buttonDiv"
+          );
           const buttonEdit = document.createElement("button");
           const iconEdit = document.createElement("img");
           iconEdit.setAttribute("src", "./assets/edit_icon.svg");
@@ -86,7 +55,10 @@ window.utils = {
           const iconDelete = document.createElement("img");
           iconDelete.setAttribute("src", "./assets/delete_icon.svg");
           buttonDelete.setAttribute("class", Object.values(row[i])[0]);
-          buttonDelete.setAttribute("onclick", "editions.delete(this.className)");
+          buttonDelete.setAttribute(
+            "onclick",
+            "editions.delete(this.className)"
+          );
           buttonDelete.appendChild(iconDelete);
           buttonsTd.appendChild(buttonDelete);
           tr.appendChild(buttonsTd);
@@ -94,10 +66,29 @@ window.utils = {
       }
       tbody.appendChild(tr);
     }
-  
+
     table.append(thead, tbody);
     tableContainer.appendChild(table);
-  
+
     return tableContainer;
-  }
-}
+  },
+  createElementWithText: ({type, text = "", attrType = "", attrName = ""}) => {
+    const element = document.createElement(type);
+    element.textContent = text;
+    if (!attrType === "") element.setAttribute(attrType, attrName);
+    return element;
+  },
+  createElementWithAttribute: (elName, attrType, attrName) => {
+    const newElement = document.createElement(elName);
+    newElement.setAttribute(attrType, attrName);
+    return newElement;
+  },
+  callCSS: (reference) => {
+    const link = document.createElement("link");
+    const attributes = { rel: "stylesheet", type: "text/css", href: reference };
+    for (const key in attributes) {
+      link.setAttribute(key, attributes[key]);
+    }
+    document.head.appendChild(link);
+  },
+};

@@ -7,7 +7,7 @@ window.field = {
     return form;
   },
   create: ({ label, className, inputType = "text" }) => {
-    const field = CreateElementWithAttribute("fieldset");
+    const field = utils.createElementWithAttribute("fieldset");
     field.classList.add("field");
     const labelElement = document.createElement("label");
     labelElement.textContent = label + ":";

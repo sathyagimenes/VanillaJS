@@ -24,8 +24,8 @@
     document.body.appendChild(main);
     window.Page.home();
     window.Page.navigation.addFooter();
-    CallCSS("./styles/style.css");
-    CallCSS("./styles/list.css");
-    CallCSS("./styles/register.css");
+    utils.callCSS("./styles/style.css");
+    utils.callCSS("./styles/list.css");
+    utils.callCSS("./styles/register.css");
   });
 })();

@@ -1,10 +1,14 @@
 window.Page.navigation = {
   addHeader: () => {
     const header = document.createElement("header");
-    const nav = CreateElementWithAttribute("nav", "class", "headerNav");
+    const nav = utils.createElementWithAttribute("nav", "class", "headerNav");
     const ul = document.createElement("ul");
 
-    const iconHeader = CreateElementWithAttribute("img", "class", "headerIcon");
+    const iconHeader = utils.createElementWithAttribute(
+      "img",
+      "class",
+      "headerIcon"
+    );
     iconHeader.setAttribute("src", "./assets/booksIcon.svg");
     iconHeader.addEventListener("click", () => {
       Page.home();
@@ -32,7 +36,7 @@ window.Page.navigation = {
     ];
 
     navLinks.forEach((page) => {
-      const item = CreateElementWithText({ type: "li", text: page.text });
+      const item = utils.createElementWithText({ type: "li", text: page.text });
       item.addEventListener("click", page.onClick);
       ul.appendChild(item);
     });
@@ -43,14 +47,11 @@ window.Page.navigation = {
   },
   addFooter: () => {
     const footer = document.createElement("footer");
-    const nav = CreateElementWithAttribute("nav", "class", "footerNav");
+    const nav = utils.createElementWithAttribute("nav", "class", "footerNav");
     const ul = document.createElement("ul");
     const redesSociais = ["Linkedin", "Github"];
     redesSociais.forEach((element) => {
-      const redeSocial = CreateElementWithText(
-        "li",
-        element,
-      );
+      const redeSocial = utils.createElementWithText("li", element);
       ul.appendChild(redeSocial);
     });
     nav.appendChild(ul);

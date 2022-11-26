@@ -2,20 +2,20 @@
 window.Page.register = async () => {
   main.innerHTML = "";
 
-  const container = CreateElementWithAttribute(
+  const container = utils.createElementWithAttribute(
     "div",
     "class",
     "containerRegister"
   );
   main.appendChild(container);
 
-  const title = CreateElementWithText({
+  const title = utils.createElementWithText({
     type: "h1",
     text: "Cadastro de livros",
   });
 
   const divBtn = document.createElement("div");
-  const btnInsert = CreateElementWithText({
+  const btnInsert = utils.createElementWithText({
     type: "button",
     text: "Cadastrar",
     attrType: "type",
@@ -53,13 +53,13 @@ window.Page.register = async () => {
       description: inDescription,
       quantity: parseInt(inQuantity),
     });
-    debugger
+    debugger;
     const response = await api.connection({
       method: "POST",
       service: "livro",
       body,
     });
-    if(response){
+    if (response) {
       window.alert("Livro adicionado com sucesso!");
     }
   }
@@ -72,7 +72,6 @@ window.Page.register = async () => {
     const autor = form.querySelector("[class='autor']");
     const descricao = form.querySelector("[class='descricao']");
     const tiragem = form.querySelector("[class='tiragem']");
-    // const sameTitle = FilterByName(listOfBooks, titulo.value);
     if (titulo.value.length <= 2) {
       window.alert("O titulo deve ter, pelo menos, três letras");
     } else if (autor.value.length <= 2) {
@@ -81,8 +80,6 @@ window.Page.register = async () => {
       window.alert("A descrição deve ter, pelo menos, três letras");
     } else if (tiragem.value.length < 1) {
       window.alert("A tiragem deve ter, pelo menos, um número");
-      // } else if (sameTitle.length > 0) {
-      //   window.alert(`O título ${sameTitle.value} já existe`);
     } else {
       register(titulo.value, autor.value, descricao.value, tiragem.value);
     }

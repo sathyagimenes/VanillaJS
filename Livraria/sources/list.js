@@ -1,20 +1,20 @@
 window.Page.list = async () => {
   main.innerHTML = "";
 
-  const pageContainer = CreateElementWithAttribute(
+  const pageContainer = utils.createElementWithAttribute(
     "div",
     "class",
     "pageContainer"
   );
   main.appendChild(pageContainer);
 
-  const searchContainer = CreateElementWithAttribute(
+  const searchContainer = utils.createElementWithAttribute(
     "div",
     "class",
     "searchContainer"
   );
 
-  const searchInput = CreateElementWithAttribute(
+  const searchInput = utils.createElementWithAttribute(
     "input",
     "placeholder",
     "buscar por título..."
@@ -50,7 +50,7 @@ window.Page.list = async () => {
         tiragem: element.tiragem,
       });
     });
-    const clearTable = document.querySelector('.booksTable');
+    const clearTable = document.querySelector(".booksTable");
     clearTable.remove();
     const filteredTable = utils.createTable(filteredContent, tableHeaderData);
     pageContainer.appendChild(filteredTable);
