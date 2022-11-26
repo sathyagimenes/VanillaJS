@@ -19,8 +19,8 @@
 }
 
 .containerRegister input {
-	width: 250px;
-	height: 30px;
+	width: 290px;
+	height: 45px;
 	font-size: 22px;
 	padding: 5px;
 	border-radius: 8px;
@@ -29,7 +29,7 @@
 }
 
 .containerRegister textarea {
-	width: 250px;
+	width: 290px;
 	font-size: 22px;
 	padding: 5px;
 	border-radius: 8px;

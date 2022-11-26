@@ -80,16 +80,18 @@ main {
 	padding: 20px;
 	font-size: 30px;
 	justify-content: center;
+	
 	background-image: url("../assets/home.jpg");
-	width: 1800px;
+	width: 2000px;
 	background-repeat: repeat;
 	background-position: center center;
 	background-size: cover;
 }
 
 .homeContainer h1 {
-	background-color: var(--color-1);
+	background-color: var(--color-2);
 	text-align: center;
+	justify-content: center;
 	display: flex;
 	align-items: center;
 	padding: 10px;

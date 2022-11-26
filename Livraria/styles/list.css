@@ -13,19 +13,20 @@
 	padding: 30px;
   }
   .searchContainer input {
-	width: 250px;
-    height: 30px;
+	width: 290px;
+    height: 45px;
 	font-size: 22px;
 	padding: 3px;
 	border-radius: 8px;
   }
 
   .searchContainer button {
+	height: 45px;
 	border-radius: 10px;
 	background-color: var(--color-4);
 	color: var(--color-1);
 	margin: 10px;
-	padding: 5px;
+	padding: 10px;
 	font-size: 19px;
   }
 
@@ -111,6 +112,6 @@ tr button img {
 	background-color: var(--color-4);
 	color: var(--color-1);
 	margin: 10px;
-	padding: 5px;
+	padding: 10px;
 	font-size: 19px;
   }
