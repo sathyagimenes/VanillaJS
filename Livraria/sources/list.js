@@ -50,7 +50,6 @@ window.Page.list = async () => {
       body,
     });
     filteredBooks.sort((a, b) => a.titulo - b.titulo);
-    bookSearch.value = "";
 
     const filteredContent = [];
     filteredBooks.forEach((element) => {
@@ -66,7 +65,23 @@ window.Page.list = async () => {
     clearTable.remove();
     const filteredTable = utils.createTable(filteredContent, tableHeaderData);
     pageContainer.appendChild(filteredTable);
+
+    const storageBooks = JSON.parse(
+      localStorage.getItem("searchedBook") || "[]"
+    );
+    storageBooks.push(bookSearch.value);
+    bookSearch.value = "";
+
+    if (storageBooks.length > 3) {
+      storageBooks.shift();
+    }
+    localStorage.setItem("searchedBook", JSON.stringify(storageBooks));
+
+    const clearsearches = document.querySelector(".previousSearch");
+    clearsearches.remove();
+    utils.createSearch();
   }
+  utils.createSearch();
 
   const tableHeaderData = ["Título", "Autor", "Descrição", "Tiragem"];
 

@@ -80,6 +80,37 @@ window.utils = {
 
     return tableContainer;
   },
+  createSearch: () => {
+    const searchContainer = document.querySelector(".searchContainer");
+    const previousSearch = utils.createElementWithAttribute(
+      "div",
+      "class",
+      "previousSearch"
+    );
+    const firstSearch = utils.createElementWithAttribute(
+      "label",
+      "class",
+      "firstSearch"
+    );
+    const secondSearch = utils.createElementWithAttribute(
+      "label",
+      "class",
+      "secondSearch"
+    );
+    const thirdSearch = utils.createElementWithAttribute(
+      "label",
+      "class",
+      "thirdSearch"
+    );
+    previousSearch.append(firstSearch, secondSearch, thirdSearch);
+    searchContainer.appendChild(previousSearch);
+    const storagedData = JSON.parse(localStorage.getItem("searchedBook"));
+    if (storagedData) {
+      firstSearch.textContent = storagedData.slice(-1);
+      secondSearch.textContent = storagedData.slice(-2, -1);
+      thirdSearch.textContent = storagedData.slice(-3, -2);
+    }
+  },
   createElementWithText: ({
     type,
     text = "",

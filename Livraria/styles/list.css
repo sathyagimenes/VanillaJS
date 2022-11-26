@@ -65,6 +65,7 @@
   	border: 1px solid;
   	padding: 5px;
   	margin: 50px;
+  	background-color: var(--color-1);
   }
 
   tr button {
