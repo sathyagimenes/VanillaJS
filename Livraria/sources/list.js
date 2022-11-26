@@ -14,7 +14,7 @@ window.Page.list = async () => {
     "titleListContainer"
   );
 
-  const title = utils.createElementWithText({type: "h1", text: "Acervo"});
+  const title = utils.createElementWithText({ type: "h1", text: "Acervo" });
   titleContainer.appendChild(title);
   const searchContainer = utils.createElementWithAttribute(
     "div",

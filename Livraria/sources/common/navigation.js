@@ -43,7 +43,6 @@ window.Page.navigation = {
     document.body.appendChild(header);
     header.appendChild(nav);
     nav.appendChild(ul);
-    // nav.appendChild(iconClose);
   },
   addFooter: () => {
     const footer = document.createElement("footer");

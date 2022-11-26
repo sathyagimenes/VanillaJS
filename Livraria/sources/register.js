@@ -1,4 +1,3 @@
-// window.Page.companiesList = async (filter = "") => {
 window.Page.register = async () => {
   main.innerHTML = "";
 

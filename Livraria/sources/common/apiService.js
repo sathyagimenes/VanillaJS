@@ -14,21 +14,21 @@ window.api = {
           body,
         }
       );
-	  if (!response) {
-		alert('Ocorreu um erro na comunicação com o servidor!');
-		console.error('Ocorreu um erro: ', response);
-		return [];
-	  }
-  
-	  const data = await response.json();
-	  if (data) {
-		return data;
-	  }
-	  return;
-	} catch (error) {
-    alert('Exception error: Ocorreu um erro na comunicação com o servidor!')
-	  console.log('Erro na comunicação:', error);
-	}
+      if (!response) {
+        alert("Ocorreu um erro na comunicação com o servidor!");
+        console.error("Ocorreu um erro: ", response);
+        return [];
+      }
+
+      const data = await response.json();
+      if (data) {
+        return data;
+      }
+      return;
+    } catch (error) {
+      alert("Exception error: Ocorreu um erro na comunicação com o servidor!");
+      console.log("Erro na comunicação:", error);
+    }
   },
   getBookBody: (title = "") => {
     return JSON.stringify({
@@ -51,22 +51,22 @@ window.api = {
   },
   putBookBody: ({ id, title, author, description, quantity }) => {
     return JSON.stringify({
-      "uid": id,
-      "aluno": {
-        "uid": api.myCode()
+      uid: id,
+      aluno: {
+        uid: api.myCode(),
       },
-      "tiragem": quantity,
-      "titulo": title,
-      "autor": author,
-      "descricao": description
+      tiragem: quantity,
+      titulo: title,
+      autor: author,
+      descricao: description,
     });
   },
   deleteBookBody: (id) => {
     return JSON.stringify({
       aluno: {
-        uid: api.myCode()
+        uid: api.myCode(),
       },
-      uid: id
-    })
-}
+      uid: id,
+    });
+  },
 };

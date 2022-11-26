@@ -20,12 +20,20 @@ window.utils = {
       "tableContainer"
     );
 
-    const table = utils.createElementWithAttribute("table", "class", "booksTable");
+    const table = utils.createElementWithAttribute(
+      "table",
+      "class",
+      "booksTable"
+    );
     const thead = document.createElement("thead");
     const tbody = document.createElement("tbody");
 
     tableHead.forEach((item) => {
-      const th = utils.createElementWithAttribute("th", "class", item.toLocaleLowerCase());
+      const th = utils.createElementWithAttribute(
+        "th",
+        "class",
+        item.toLocaleLowerCase()
+      );
       th.innerText = item;
       thead.appendChild(th);
     });
@@ -72,7 +80,12 @@ window.utils = {
 
     return tableContainer;
   },
-  createElementWithText: ({type, text = "", attrType = "", attrName = ""}) => {
+  createElementWithText: ({
+    type,
+    text = "",
+    attrType = "",
+    attrName = "",
+  }) => {
     const element = document.createElement(type);
     element.textContent = text;
     if (!attrType === "") element.setAttribute(attrType, attrName);
