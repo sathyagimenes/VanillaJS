@@ -64,7 +64,6 @@ window.Page.register = async () => {
     }
   }
 
-  // const listOfBooks = await GetBook();
   btnInsert.addEventListener("click", InsertNewBook);
 
   async function InsertNewBook() {

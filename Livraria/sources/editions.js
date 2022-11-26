@@ -97,32 +97,4 @@ window.editions = {
       }, 1000);
     }
   },
-  search: async () => {
-    const bookSearch = document.getElementsByClassName("searchInput")[0];
-
-    const body = api.getBookBody(bookSearch.value);
-    const filteredBooks = await api.connection({
-      method: "POST",
-      service: "livro/lista",
-      body,
-    });
-    filteredBooks.sort((a, b) => a.titulo - b.titulo);
-    bookSearch.value = "";
-
-    const filteredContent = [];
-    filteredBooks.forEach((element) => {
-      filteredContent.push({
-        uid: element.uid,
-        titulo: element.titulo,
-        autor: element.autor,
-        descricao: element.descricao,
-        tiragem: element.tiragem,
-      });
-    });
-    const tableHeaderData = ["Título", "Autor", "Descrição", "Tiragem"];
-    const table = utils.createTable(filteredContent, tableHeaderData);
-    tableContainer.appendChild(table);
-
-    //parte do storage
-  },
 };
